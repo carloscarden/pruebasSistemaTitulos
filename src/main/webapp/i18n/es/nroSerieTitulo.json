@@ -1,0 +1,30 @@
+{
+  "sistTituApp": {
+    "nroSerieTitulo": {
+      "home": {
+        "title": "Nro Serie Titulos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Nro Serie Titulo",
+        "createOrEditLabel": "Crear o editar Nro Serie Titulo",
+        "notFound": "Ningún Nro Serie Titulos encontrado"
+      },
+      "created": "Un nuevo Nro Serie Titulo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Nro Serie Titulo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Nro Serie Titulo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Nro Serie Titulo {{ id }}?"
+      },
+      "detail": {
+        "title": "Nro Serie Titulo"
+      },
+      "id": "ID",
+      "nroSerieInicio": "Nro Serie Inicio",
+      "nroSerieFin": "Nro Serie Fin",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin",
+      "usuarioAlta": "Usuario Alta",
+      "usuarioModificacion": "Usuario Modificacion",
+      "serie": "Serie"
+    }
+  }
+}

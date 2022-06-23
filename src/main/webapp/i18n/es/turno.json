@@ -1,0 +1,19 @@
+{
+  "sistTituApp": {
+    "turno": {
+      "home": {
+        "title": "Turnos",
+        "refreshListLabel": "Refrescar lista",
+        "notFound": "Ningún Turnos encontrado"
+      },
+      "detail": {
+        "title": "Turno"
+      },
+      "id": "ID",
+      "turno": "Turno",
+      "descripcion": "Descripcion",
+      "vigh": "Vigh",
+      "orden": "Orden"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "sistTituApp": {
+    "alumnoEstabOferta": {
+      "home": {
+        "title": "Alumno Estab Ofertas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Alumno Estab Oferta",
+        "createOrEditLabel": "Crear o editar Alumno Estab Oferta",
+        "notFound": "Ningún Alumno Estab Ofertas encontrado"
+      },
+      "created": "Un nuevo Alumno Estab Oferta ha sido creado con el identificador {{ param }}",
+      "updated": "Un Alumno Estab Oferta ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Alumno Estab Oferta ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Alumno Estab Oferta {{ id }}?"
+      },
+      "detail": {
+        "title": "Alumno Estab Oferta"
+      },
+      "id": "Id",
+      "idSer": "Id Ser",
+      "idOfertaEducativa": "Id Oferta Educativa",
+      "idAlumno": "Id Alumno",
+      "idEstadoAlumnoEstabOferta": "Id Estado Alumno Estab Oferta",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin",
+      "alumnoAnalitico": "Alumno Analitico",
+      "alumnoTitulo": "Alumno Titulo",
+      "alumno": "Alumno",
+      "ofertaEducativa": "Oferta Educativa"
+    }
+  }
+}

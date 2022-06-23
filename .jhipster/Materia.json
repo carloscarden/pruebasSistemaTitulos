@@ -1,0 +1,75 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143840",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "materia",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idMateriaDenominacion",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "marcaModulo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cargaHoraria",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idOfertaEducativa",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idSeccion",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idTipoMateriaOpcional",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "orden",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idArea",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idAsignatira",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "codigosChequeados",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "obligatoriedad",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "unidadCargaPedagogica",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Materia",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoAnalitico",
+      "otherEntityRelationshipName": "materia",
+      "relationshipName": "alumnoAnalitico",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

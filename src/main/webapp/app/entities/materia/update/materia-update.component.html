@@ -1,0 +1,155 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-materia-heading" data-cy="MateriaCreateUpdateHeading">Create or edit a Materia</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idMateriaDenominacion">Id Materia Denominacion</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idMateriaDenominacion"
+            id="field_idMateriaDenominacion"
+            data-cy="idMateriaDenominacion"
+            formControlName="idMateriaDenominacion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_marcaModulo">Marca Modulo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="marcaModulo"
+            id="field_marcaModulo"
+            data-cy="marcaModulo"
+            formControlName="marcaModulo"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cargaHoraria">Carga Horaria</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cargaHoraria"
+            id="field_cargaHoraria"
+            data-cy="cargaHoraria"
+            formControlName="cargaHoraria"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idOfertaEducativa">Id Oferta Educativa</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idOfertaEducativa"
+            id="field_idOfertaEducativa"
+            data-cy="idOfertaEducativa"
+            formControlName="idOfertaEducativa"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idSeccion">Id Seccion</label>
+          <input type="number" class="form-control" name="idSeccion" id="field_idSeccion" data-cy="idSeccion" formControlName="idSeccion" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idTipoMateriaOpcional">Id Tipo Materia Opcional</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idTipoMateriaOpcional"
+            id="field_idTipoMateriaOpcional"
+            data-cy="idTipoMateriaOpcional"
+            formControlName="idTipoMateriaOpcional"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_orden">Orden</label>
+          <input type="number" class="form-control" name="orden" id="field_orden" data-cy="orden" formControlName="orden" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idArea">Id Area</label>
+          <input type="number" class="form-control" name="idArea" id="field_idArea" data-cy="idArea" formControlName="idArea" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idAsignatira">Id Asignatira</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idAsignatira"
+            id="field_idAsignatira"
+            data-cy="idAsignatira"
+            formControlName="idAsignatira"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_codigosChequeados">Codigos Chequeados</label>
+          <input
+            type="number"
+            class="form-control"
+            name="codigosChequeados"
+            id="field_codigosChequeados"
+            data-cy="codigosChequeados"
+            formControlName="codigosChequeados"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_obligatoriedad">Obligatoriedad</label>
+          <input
+            type="number"
+            class="form-control"
+            name="obligatoriedad"
+            id="field_obligatoriedad"
+            data-cy="obligatoriedad"
+            formControlName="obligatoriedad"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_unidadCargaPedagogica">Unidad Carga Pedagogica</label>
+          <input
+            type="number"
+            class="form-control"
+            name="unidadCargaPedagogica"
+            id="field_unidadCargaPedagogica"
+            data-cy="unidadCargaPedagogica"
+            formControlName="unidadCargaPedagogica"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

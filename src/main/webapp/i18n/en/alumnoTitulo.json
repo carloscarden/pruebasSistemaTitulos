@@ -1,0 +1,49 @@
+{
+  "sistTituApp": {
+    "alumnoTitulo": {
+      "home": {
+        "title": "Alumno Titulos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Alumno Titulo",
+        "createOrEditLabel": "Create or edit a Alumno Titulo",
+        "notFound": "No Alumno Titulos found"
+      },
+      "created": "A new Alumno Titulo is created with identifier {{ param }}",
+      "updated": "A Alumno Titulo is updated with identifier {{ param }}",
+      "deleted": "A Alumno Titulo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alumno Titulo {{ id }}?"
+      },
+      "detail": {
+        "title": "Alumno Titulo"
+      },
+      "id": "Id",
+      "idAlumnoEstabOferta": "Id Alumno Estab Oferta",
+      "fechaEmision": "Fecha Emision",
+      "nroSerie": "Nro Serie",
+      "numeroRfifd": "Numero Rfifd",
+      "validezNacional": "Validez Nacional",
+      "fechaEnvio": "Fecha Envio",
+      "fechaEgreso": "Fecha Egreso",
+      "nroLibroMatriz": "Nro Libro Matriz",
+      "nroActa": "Nro Acta",
+      "nroFolio": "Nro Folio",
+      "estabNombre": "Estab Nombre",
+      "estabCue": "Estab Cue",
+      "estabUbicadoEn": "Estab Ubicado En",
+      "estabCiudad": "Estab Ciudad",
+      "estabProvincia": "Estab Provincia",
+      "idEstadoAlumnoTitulo": "Id Estado Alumno Titulo",
+      "tituloIntermedio": "Titulo Intermedio",
+      "promedio": "Promedio",
+      "fechaRuta": "Fecha Ruta",
+      "idRamaRuta": "Id Rama Ruta",
+      "apYnomListoParaEnviar": "Ap Ynom Listo Para Enviar",
+      "documentoListoParaEnviar": "Documento Listo Para Enviar",
+      "apYnomEnviado": "Ap Ynom Enviado",
+      "documentoEnviado": "Documento Enviado",
+      "fechaUltimoEstado": "Fecha Ultimo Estado",
+      "alumnoEstabOferta": "Alumno Estab Oferta"
+    }
+  }
+}

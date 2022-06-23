@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity AlumnoTitulo.
+    -->
+    <changeSet id="20220606143838-1" author="jhipster">
+        <createTable tableName="alumno_titulo">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_alumno_estab_oferta" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_emision" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="nro_serie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="numero_rfifd" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="validez_nacional" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_envio" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_egreso" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="nro_libro_matriz" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nro_acta" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nro_folio" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="estab_nombre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="estab_cue" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="estab_ubicado_en" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="estab_ciudad" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="estab_provincia" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_estado_alumno_titulo" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="titulo_intermedio" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="promedio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_ruta" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_rama_ruta" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ap_ynom_listo_para_enviar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="documento_listo_para_enviar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ap_ynom_enviado" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="documento_enviado" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_ultimo_estado" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="alumno_estab_oferta_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="alumno_titulo" columnName="fecha_emision" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="alumno_titulo" columnName="fecha_envio" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="alumno_titulo" columnName="fecha_egreso" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="alumno_titulo" columnName="fecha_ruta" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="alumno_titulo" columnName="fecha_ultimo_estado" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220606143838-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/alumno_titulo.csv"
+                  separator=";"
+                  tableName="alumno_titulo"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="id_alumno_estab_oferta" type="numeric"/>
+            <column name="fecha_emision" type="date"/>
+            <column name="nro_serie" type="string"/>
+            <column name="numero_rfifd" type="string"/>
+            <column name="validez_nacional" type="string"/>
+            <column name="fecha_envio" type="date"/>
+            <column name="fecha_egreso" type="date"/>
+            <column name="nro_libro_matriz" type="numeric"/>
+            <column name="nro_acta" type="numeric"/>
+            <column name="nro_folio" type="numeric"/>
+            <column name="estab_nombre" type="string"/>
+            <column name="estab_cue" type="string"/>
+            <column name="estab_ubicado_en" type="string"/>
+            <column name="estab_ciudad" type="string"/>
+            <column name="estab_provincia" type="string"/>
+            <column name="id_estado_alumno_titulo" type="numeric"/>
+            <column name="titulo_intermedio" type="numeric"/>
+            <column name="promedio" type="string"/>
+            <column name="fecha_ruta" type="date"/>
+            <column name="id_rama_ruta" type="numeric"/>
+            <column name="ap_ynom_listo_para_enviar" type="string"/>
+            <column name="documento_listo_para_enviar" type="string"/>
+            <column name="ap_ynom_enviado" type="string"/>
+            <column name="documento_enviado" type="string"/>
+            <column name="fecha_ultimo_estado" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

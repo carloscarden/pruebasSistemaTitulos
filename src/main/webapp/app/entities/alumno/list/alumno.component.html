@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="AlumnoHeading">
+    <span jhiTranslate="sistTituApp.alumno.home.title">Alumnos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-alumno"
+        [routerLink]="['/alumno/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Alumno </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="alumnos?.length === 0">
+    <span>No alumnos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="alumnos && alumnos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span>Id</span></th>
+          <th scope="col"><span>Documento</span></th>
+          <th scope="col"><span>Id Tipo Documento</span></th>
+          <th scope="col"><span>Nombre</span></th>
+          <th scope="col"><span>Apellido</span></th>
+          <th scope="col"><span>Fecha Nacimento</span></th>
+          <th scope="col"><span>Sexo</span></th>
+          <th scope="col"><span>Ciudad Nacimiento</span></th>
+          <th scope="col"><span>Provincia Nacimiento</span></th>
+          <th scope="col"><span>Id Nacionalidad</span></th>
+          <th scope="col"><span>Id Ser Creador</span></th>
+          <th scope="col"><span>Id Provincia</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/alumno', alumno.id, 'view']">{{ alumno.id }}</a>
+          </td>
+          <td>{{ alumno.documento }}</td>
+          <td>{{ alumno.idTipoDocumento }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellido }}</td>
+          <td>{{ alumno.fechaNacimento | formatMediumDatetime }}</td>
+          <td>{{ alumno.sexo }}</td>
+          <td>{{ alumno.ciudadNacimiento }}</td>
+          <td>{{ alumno.provinciaNacimiento }}</td>
+          <td>{{ alumno.idNacionalidad }}</td>
+          <td>{{ alumno.idSerCreador }}</td>
+          <td>{{ alumno.idProvincia }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/alumno', alumno.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/alumno', alumno.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(alumno)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

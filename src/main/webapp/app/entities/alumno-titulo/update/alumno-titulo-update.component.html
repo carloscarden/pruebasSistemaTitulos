@@ -1,0 +1,335 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-alumno-titulo-heading" data-cy="AlumnoTituloCreateUpdateHeading">Create or edit a Alumno Titulo</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idAlumnoEstabOferta">Id Alumno Estab Oferta</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idAlumnoEstabOferta"
+            id="field_idAlumnoEstabOferta"
+            data-cy="idAlumnoEstabOferta"
+            formControlName="idAlumnoEstabOferta"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaEmision">Fecha Emision</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaEmision"
+              data-cy="fechaEmision"
+              type="datetime-local"
+              class="form-control"
+              name="fechaEmision"
+              formControlName="fechaEmision"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nroSerie">Nro Serie</label>
+          <input type="text" class="form-control" name="nroSerie" id="field_nroSerie" data-cy="nroSerie" formControlName="nroSerie" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_numeroRfifd">Numero Rfifd</label>
+          <input
+            type="text"
+            class="form-control"
+            name="numeroRfifd"
+            id="field_numeroRfifd"
+            data-cy="numeroRfifd"
+            formControlName="numeroRfifd"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_validezNacional">Validez Nacional</label>
+          <input
+            type="text"
+            class="form-control"
+            name="validezNacional"
+            id="field_validezNacional"
+            data-cy="validezNacional"
+            formControlName="validezNacional"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaEnvio">Fecha Envio</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaEnvio"
+              data-cy="fechaEnvio"
+              type="datetime-local"
+              class="form-control"
+              name="fechaEnvio"
+              formControlName="fechaEnvio"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaEgreso">Fecha Egreso</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaEgreso"
+              data-cy="fechaEgreso"
+              type="datetime-local"
+              class="form-control"
+              name="fechaEgreso"
+              formControlName="fechaEgreso"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nroLibroMatriz">Nro Libro Matriz</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nroLibroMatriz"
+            id="field_nroLibroMatriz"
+            data-cy="nroLibroMatriz"
+            formControlName="nroLibroMatriz"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nroActa">Nro Acta</label>
+          <input type="number" class="form-control" name="nroActa" id="field_nroActa" data-cy="nroActa" formControlName="nroActa" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nroFolio">Nro Folio</label>
+          <input type="number" class="form-control" name="nroFolio" id="field_nroFolio" data-cy="nroFolio" formControlName="nroFolio" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_estabNombre">Estab Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="estabNombre"
+            id="field_estabNombre"
+            data-cy="estabNombre"
+            formControlName="estabNombre"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_estabCue">Estab Cue</label>
+          <input type="text" class="form-control" name="estabCue" id="field_estabCue" data-cy="estabCue" formControlName="estabCue" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_estabUbicadoEn">Estab Ubicado En</label>
+          <input
+            type="text"
+            class="form-control"
+            name="estabUbicadoEn"
+            id="field_estabUbicadoEn"
+            data-cy="estabUbicadoEn"
+            formControlName="estabUbicadoEn"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_estabCiudad">Estab Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            name="estabCiudad"
+            id="field_estabCiudad"
+            data-cy="estabCiudad"
+            formControlName="estabCiudad"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_estabProvincia">Estab Provincia</label>
+          <input
+            type="text"
+            class="form-control"
+            name="estabProvincia"
+            id="field_estabProvincia"
+            data-cy="estabProvincia"
+            formControlName="estabProvincia"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idEstadoAlumnoTitulo">Id Estado Alumno Titulo</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idEstadoAlumnoTitulo"
+            id="field_idEstadoAlumnoTitulo"
+            data-cy="idEstadoAlumnoTitulo"
+            formControlName="idEstadoAlumnoTitulo"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_tituloIntermedio">Titulo Intermedio</label>
+          <input
+            type="number"
+            class="form-control"
+            name="tituloIntermedio"
+            id="field_tituloIntermedio"
+            data-cy="tituloIntermedio"
+            formControlName="tituloIntermedio"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_promedio">Promedio</label>
+          <input type="text" class="form-control" name="promedio" id="field_promedio" data-cy="promedio" formControlName="promedio" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaRuta">Fecha Ruta</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaRuta"
+              data-cy="fechaRuta"
+              type="datetime-local"
+              class="form-control"
+              name="fechaRuta"
+              formControlName="fechaRuta"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idRamaRuta">Id Rama Ruta</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idRamaRuta"
+            id="field_idRamaRuta"
+            data-cy="idRamaRuta"
+            formControlName="idRamaRuta"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_apYnomListoParaEnviar">Ap Ynom Listo Para Enviar</label>
+          <input
+            type="text"
+            class="form-control"
+            name="apYnomListoParaEnviar"
+            id="field_apYnomListoParaEnviar"
+            data-cy="apYnomListoParaEnviar"
+            formControlName="apYnomListoParaEnviar"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_documentoListoParaEnviar">Documento Listo Para Enviar</label>
+          <input
+            type="text"
+            class="form-control"
+            name="documentoListoParaEnviar"
+            id="field_documentoListoParaEnviar"
+            data-cy="documentoListoParaEnviar"
+            formControlName="documentoListoParaEnviar"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_apYnomEnviado">Ap Ynom Enviado</label>
+          <input
+            type="text"
+            class="form-control"
+            name="apYnomEnviado"
+            id="field_apYnomEnviado"
+            data-cy="apYnomEnviado"
+            formControlName="apYnomEnviado"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_documentoEnviado">Documento Enviado</label>
+          <input
+            type="text"
+            class="form-control"
+            name="documentoEnviado"
+            id="field_documentoEnviado"
+            data-cy="documentoEnviado"
+            formControlName="documentoEnviado"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaUltimoEstado">Fecha Ultimo Estado</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaUltimoEstado"
+              data-cy="fechaUltimoEstado"
+              type="datetime-local"
+              class="form-control"
+              name="fechaUltimoEstado"
+              formControlName="fechaUltimoEstado"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_alumnoEstabOferta">Alumno Estab Oferta</label>
+          <select
+            class="form-control"
+            id="field_alumnoEstabOferta"
+            data-cy="alumnoEstabOferta"
+            name="alumnoEstabOferta"
+            formControlName="alumnoEstabOferta"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                alumnoEstabOfertaOption.id === editForm.get('alumnoEstabOferta')!.value?.id
+                  ? editForm.get('alumnoEstabOferta')!.value
+                  : alumnoEstabOfertaOption
+              "
+              *ngFor="let alumnoEstabOfertaOption of alumnoEstabOfertasSharedCollection; trackBy: trackAlumnoEstabOfertaById"
+            >
+              {{ alumnoEstabOfertaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

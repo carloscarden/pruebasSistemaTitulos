@@ -1,0 +1,71 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143835",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "alumno",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "documento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idTipoDocumento",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apellido",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaNacimento",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "sexo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ciudadNacimiento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "provinciaNacimiento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idNacionalidad",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idSerCreador",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idProvincia",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Alumno",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoEstabOferta",
+      "otherEntityRelationshipName": "alumno",
+      "relationshipName": "alumnoEstabOferta",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

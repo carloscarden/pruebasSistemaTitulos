@@ -1,0 +1,18 @@
+{
+  "changelogDate": "20220606174106",
+  "fields": [
+    {
+      "fieldName": "codigo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Jornada",
+  "pagination": "no",
+  "readOnly": true,
+  "relationships": [],
+  "service": "no"
+}

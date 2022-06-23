@@ -1,0 +1,35 @@
+{
+  "sistTituApp": {
+    "alumno": {
+      "home": {
+        "title": "Alumnos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Alumno",
+        "createOrEditLabel": "Crear o editar Alumno",
+        "notFound": "Ningún Alumnos encontrado"
+      },
+      "created": "Un nuevo Alumno ha sido creado con el identificador {{ param }}",
+      "updated": "Un Alumno ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Alumno ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Alumno {{ id }}?"
+      },
+      "detail": {
+        "title": "Alumno"
+      },
+      "id": "Id",
+      "documento": "Documento",
+      "idTipoDocumento": "Id Tipo Documento",
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "fechaNacimento": "Fecha Nacimento",
+      "sexo": "Sexo",
+      "ciudadNacimiento": "Ciudad Nacimiento",
+      "provinciaNacimiento": "Provincia Nacimiento",
+      "idNacionalidad": "Id Nacionalidad",
+      "idSerCreador": "Id Ser Creador",
+      "idProvincia": "Id Provincia",
+      "alumnoEstabOferta": "Alumno Estab Oferta"
+    }
+  }
+}

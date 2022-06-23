@@ -1,0 +1,54 @@
+<div>
+  <h2 id="page-heading" data-cy="TurnoHeading">
+    <span jhiTranslate="sistTituApp.turno.home.title">Turnos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="sistTituApp.turno.home.refreshListLabel">Refresh List</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="turnos?.length === 0">
+    <span jhiTranslate="sistTituApp.turno.home.notFound">No turnos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="turnos && turnos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.turno.turno">Turno</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.turno.descripcion">Descripcion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.turno.vigh">Vigh</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.turno.orden">Orden</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let turno of turnos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/turno', turno.id, 'view']">{{ turno.id }}</a>
+          </td>
+          <td>{{ turno.turno }}</td>
+          <td>{{ turno.descripcion | formatMediumDate }}</td>
+          <td>{{ turno.vigh | formatMediumDate }}</td>
+          <td>{{ turno.orden }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/turno', turno.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "sistTituApp": {
+    "ofertaEducativa": {
+      "home": {
+        "title": "Oferta Educativas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Oferta Educativa",
+        "createOrEditLabel": "Create or edit a Oferta Educativa",
+        "notFound": "No Oferta Educativas found"
+      },
+      "created": "A new Oferta Educativa is created with identifier {{ param }}",
+      "updated": "A Oferta Educativa is updated with identifier {{ param }}",
+      "deleted": "A Oferta Educativa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Oferta Educativa {{ id }}?"
+      },
+      "detail": {
+        "title": "Oferta Educativa"
+      },
+      "id": "Id",
+      "idModalidad": "Id Modalidad",
+      "idNivel": "Id Nivel",
+      "idOrientacion": "Id Orientacion",
+      "idTituloDenominacion": "Id Titulo Denominacion",
+      "observiaciones": "Observiaciones",
+      "idTipoTitulo": "Id Tipo Titulo",
+      "idUser": "Id User",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin",
+      "fechaEstado": "Fecha Estado",
+      "idEstadoOferta": "Id Estado Oferta",
+      "idLeyEducacion": "Id Ley Educacion",
+      "idNormaAprobacionDen": "Id Norma Aprobacion Den",
+      "idNormaDictamenDen": "Id Norma Dictamen Den",
+      "idSeCorrespondeCon": "Id Se Corresponde Con",
+      "titulo": "Titulo",
+      "tituloImpresion": "Titulo Impresion",
+      "tituloIntermedio": "Titulo Intermedio",
+      "tituloIntermedioImpresion": "Titulo Intermedio Impresion",
+      "orientacion": "Orientacion",
+      "idRama": "Id Rama",
+      "idSeccionTituloIntermedio": "Id Seccion Titulo Intermedio",
+      "idCursoGrupoNombre": "Id Curso Grupo Nombre",
+      "correlatividad": "Correlatividad",
+      "idModalidadDictado": "Id Modalidad Dictado",
+      "titula": "Titula",
+      "cicloBasico": "Ciclo Basico",
+      "alumnoEstabOferta": "Alumno Estab Oferta"
+    }
+  }
+}

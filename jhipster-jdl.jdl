@@ -1,0 +1,141 @@
+
+
+
+
+entity Alumno{
+  id Long
+  documento String
+  idTipoDocumento Long
+  nombre String
+  apellido String
+  fechaNacimento Instant
+  sexo String
+  ciudadNacimiento String
+  provinciaNacimiento String
+  idNacionalidad Long
+  idSerCreador Long
+  idProvincia Long
+}
+entity AlumnoEstabOferta {
+	id Long
+    idSer Long
+    idOfertaEducativa Long
+    idAlumno Long
+    idEstadoAlumnoEstabOferta Long
+    fechaInicio Instant
+    fechaFin Instant
+}
+entity AlumnoAnalitico{
+   id Long
+   nota Long
+   idEstadoAlumnoAnalitico Long
+   idAlumnoEstabOferta Long
+   idMateria Long
+   idMesImp Long
+   idAnoImp Long
+   establecimientoImp String
+}
+
+entity AlumnoTitulo{
+   id Long
+   idAlumnoEstabOferta Long
+   fechaEmision Instant
+   nroSerie String
+   numeroRfifd String
+   validezNacional String
+   fechaEnvio Instant
+   fechaEgreso Instant
+   nroLibroMatriz Integer
+   nroActa Integer
+   nroFolio Integer
+   estabNombre String
+   estabCue String
+   estabUbicadoEn String
+   estabCiudad String
+   estabProvincia String
+   idEstadoAlumnoTitulo Long
+   tituloIntermedio Integer
+   promedio String
+   fechaRuta Instant
+   idRamaRuta Long
+   apYnomListoParaEnviar String
+   documentoListoParaEnviar String
+   apYnomEnviado String
+   documentoEnviado String
+   fechaUltimoEstado Instant
+   
+}
+
+entity OfertaEducativa{
+   id Long
+   idModalidad Long
+   idNivel Long
+   idOrientacion Long
+   idTituloDenominacion Long
+   observiaciones String
+   idTipoTitulo Long
+   idUser Long
+   fechaInicio Instant
+   fechaFin Instant
+   fechaEstado Instant
+   idEstadoOferta Long
+   idLeyEducacion Long
+   idNormaAprobacionDen Long
+   idNormaDictamenDen Long
+   idSeCorrespondeCon Long
+   titulo String
+   tituloImpresion String
+   tituloIntermedio String
+   tituloIntermedioImpresion String
+   orientacion String
+   idRama Long
+   idSeccionTituloIntermedio Long
+   idCursoGrupoNombre Long
+   correlatividad Integer
+   idModalidadDictado Long
+   titula Integer
+   cicloBasico Integer
+}
+
+entity Materia {
+   id Long
+   idMateriaDenominacion Long
+   marcaModulo String
+   cargaHoraria Long
+   idOfertaEducativa Long
+   idSeccion Long
+   idTipoMateriaOpcional Long
+   orden Long 
+   idArea Long
+   idAsignatira Long
+   codigosChequeados Long
+   obligatoriedad Long
+   unidadCargaPedagogica Long
+}
+
+
+
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Alumno to AlumnoEstabOferta{alumno}
+    OfertaEducativa to AlumnoEstabOferta{ofertaEducativa}
+    AlumnoEstabOferta to AlumnoAnalitico{alumnoEstabOferta}
+    AlumnoEstabOferta to AlumnoTitulo{alumnoEstabOferta}
+    Materia to AlumnoAnalitico{materia}
+}
+
+
+paginate AlumnoTitulo with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Materia, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

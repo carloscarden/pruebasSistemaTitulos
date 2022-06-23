@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity OfertaEducativa.
+    -->
+    <changeSet id="20220606143839-1" author="jhipster">
+        <createTable tableName="oferta_educativa">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_modalidad" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_nivel" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_orientacion" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_titulo_denominacion" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="observiaciones" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_tipo_titulo" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_user" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_inicio" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_fin" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_estado" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_estado_oferta" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_ley_educacion" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_norma_aprobacion_den" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_norma_dictamen_den" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_se_corresponde_con" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="titulo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="titulo_impresion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="titulo_intermedio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="titulo_intermedio_impresion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="orientacion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_rama" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_seccion_titulo_intermedio" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_curso_grupo_nombre" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="correlatividad" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_modalidad_dictado" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="titula" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="ciclo_basico" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="oferta_educativa" columnName="fecha_inicio" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="oferta_educativa" columnName="fecha_fin" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="oferta_educativa" columnName="fecha_estado" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220606143839-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/oferta_educativa.csv"
+                  separator=";"
+                  tableName="oferta_educativa"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="id_modalidad" type="numeric"/>
+            <column name="id_nivel" type="numeric"/>
+            <column name="id_orientacion" type="numeric"/>
+            <column name="id_titulo_denominacion" type="numeric"/>
+            <column name="observiaciones" type="string"/>
+            <column name="id_tipo_titulo" type="numeric"/>
+            <column name="id_user" type="numeric"/>
+            <column name="fecha_inicio" type="date"/>
+            <column name="fecha_fin" type="date"/>
+            <column name="fecha_estado" type="date"/>
+            <column name="id_estado_oferta" type="numeric"/>
+            <column name="id_ley_educacion" type="numeric"/>
+            <column name="id_norma_aprobacion_den" type="numeric"/>
+            <column name="id_norma_dictamen_den" type="numeric"/>
+            <column name="id_se_corresponde_con" type="numeric"/>
+            <column name="titulo" type="string"/>
+            <column name="titulo_impresion" type="string"/>
+            <column name="titulo_intermedio" type="string"/>
+            <column name="titulo_intermedio_impresion" type="string"/>
+            <column name="orientacion" type="string"/>
+            <column name="id_rama" type="numeric"/>
+            <column name="id_seccion_titulo_intermedio" type="numeric"/>
+            <column name="id_curso_grupo_nombre" type="numeric"/>
+            <column name="correlatividad" type="numeric"/>
+            <column name="id_modalidad_dictado" type="numeric"/>
+            <column name="titula" type="numeric"/>
+            <column name="ciclo_basico" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

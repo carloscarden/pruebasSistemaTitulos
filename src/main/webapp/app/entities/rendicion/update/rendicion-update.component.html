@@ -1,0 +1,194 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-rendicion-heading" data-cy="RendicionCreateUpdateHeading" jhiTranslate="sistTituApp.rendicion.home.createOrEditLabel">
+        Create or edit a Rendicion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.dniUsuario" for="field_dniUsuario">Dni Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dniUsuario"
+            id="field_dniUsuario"
+            data-cy="dniUsuario"
+            formControlName="dniUsuario"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.nombreUsuario" for="field_nombreUsuario">Nombre Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombreUsuario"
+            id="field_nombreUsuario"
+            data-cy="nombreUsuario"
+            formControlName="nombreUsuario"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.dniUsuarioAnulador" for="field_dniUsuarioAnulador"
+            >Dni Usuario Anulador</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="dniUsuarioAnulador"
+            id="field_dniUsuarioAnulador"
+            data-cy="dniUsuarioAnulador"
+            formControlName="dniUsuarioAnulador"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.nombreUsuarioAnulador" for="field_nombreUsuarioAnulador"
+            >Nombre Usuario Anulador</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nombreUsuarioAnulador"
+            id="field_nombreUsuarioAnulador"
+            data-cy="nombreUsuarioAnulador"
+            formControlName="nombreUsuarioAnulador"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.motivo" for="field_motivo">Motivo</label>
+          <input type="text" class="form-control" name="motivo" id="field_motivo" data-cy="motivo" formControlName="motivo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.causaRechazo" for="field_causaRechazo">Causa Rechazo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="causaRechazo"
+            id="field_causaRechazo"
+            data-cy="causaRechazo"
+            formControlName="causaRechazo"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.fechaAnulacion" for="field_fechaAnulacion">Fecha Anulacion</label>
+          <div class="input-group">
+            <input
+              id="field_fechaAnulacion"
+              data-cy="fechaAnulacion"
+              type="text"
+              class="form-control"
+              name="fechaAnulacion"
+              ngbDatepicker
+              #fechaAnulacionDp="ngbDatepicker"
+              formControlName="fechaAnulacion"
+            />
+            <button type="button" class="btn btn-secondary" (click)="fechaAnulacionDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.dniAlumno" for="field_dniAlumno">Dni Alumno</label>
+          <input type="text" class="form-control" name="dniAlumno" id="field_dniAlumno" data-cy="dniAlumno" formControlName="dniAlumno" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.nombreAlumno" for="field_nombreAlumno">Nombre Alumno</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombreAlumno"
+            id="field_nombreAlumno"
+            data-cy="nombreAlumno"
+            formControlName="nombreAlumno"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.alumnoTituloId" for="field_alumnoTituloId">Alumno Titulo Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="alumnoTituloId"
+            id="field_alumnoTituloId"
+            data-cy="alumnoTituloId"
+            formControlName="alumnoTituloId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.establecimientoId" for="field_establecimientoId"
+            >Establecimiento Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="establecimientoId"
+            id="field_establecimientoId"
+            data-cy="establecimientoId"
+            formControlName="establecimientoId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.claveEstab" for="field_claveEstab">Clave Estab</label>
+          <input
+            type="text"
+            class="form-control"
+            name="claveEstab"
+            id="field_claveEstab"
+            data-cy="claveEstab"
+            formControlName="claveEstab"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.rama" for="field_rama">Rama</label>
+          <input type="text" class="form-control" name="rama" id="field_rama" data-cy="rama" formControlName="rama" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.rendicion.nroFormulario" for="field_nroFormulario">Nro Formulario</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nroFormulario"
+            id="field_nroFormulario"
+            data-cy="nroFormulario"
+            formControlName="nroFormulario"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

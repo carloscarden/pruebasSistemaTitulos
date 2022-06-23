@@ -1,0 +1,372 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-oferta-educativa-heading"
+        data-cy="OfertaEducativaCreateUpdateHeading"
+        jhiTranslate="sistTituApp.ofertaEducativa.home.createOrEditLabel"
+      >
+        Create or edit a Oferta Educativa
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idModalidad" for="field_idModalidad">Id Modalidad</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idModalidad"
+            id="field_idModalidad"
+            data-cy="idModalidad"
+            formControlName="idModalidad"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idNivel" for="field_idNivel">Id Nivel</label>
+          <input type="number" class="form-control" name="idNivel" id="field_idNivel" data-cy="idNivel" formControlName="idNivel" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idOrientacion" for="field_idOrientacion"
+            >Id Orientacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idOrientacion"
+            id="field_idOrientacion"
+            data-cy="idOrientacion"
+            formControlName="idOrientacion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idTituloDenominacion" for="field_idTituloDenominacion"
+            >Id Titulo Denominacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idTituloDenominacion"
+            id="field_idTituloDenominacion"
+            data-cy="idTituloDenominacion"
+            formControlName="idTituloDenominacion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.observiaciones" for="field_observiaciones"
+            >Observiaciones</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observiaciones"
+            id="field_observiaciones"
+            data-cy="observiaciones"
+            formControlName="observiaciones"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idTipoTitulo" for="field_idTipoTitulo">Id Tipo Titulo</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idTipoTitulo"
+            id="field_idTipoTitulo"
+            data-cy="idTipoTitulo"
+            formControlName="idTipoTitulo"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idUser" for="field_idUser">Id User</label>
+          <input type="number" class="form-control" name="idUser" id="field_idUser" data-cy="idUser" formControlName="idUser" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaInicio"
+              data-cy="fechaInicio"
+              type="datetime-local"
+              class="form-control"
+              name="fechaInicio"
+              formControlName="fechaInicio"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.fechaFin" for="field_fechaFin">Fecha Fin</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaFin"
+              data-cy="fechaFin"
+              type="datetime-local"
+              class="form-control"
+              name="fechaFin"
+              formControlName="fechaFin"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.fechaEstado" for="field_fechaEstado">Fecha Estado</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaEstado"
+              data-cy="fechaEstado"
+              type="datetime-local"
+              class="form-control"
+              name="fechaEstado"
+              formControlName="fechaEstado"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idEstadoOferta" for="field_idEstadoOferta"
+            >Id Estado Oferta</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idEstadoOferta"
+            id="field_idEstadoOferta"
+            data-cy="idEstadoOferta"
+            formControlName="idEstadoOferta"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idLeyEducacion" for="field_idLeyEducacion"
+            >Id Ley Educacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idLeyEducacion"
+            id="field_idLeyEducacion"
+            data-cy="idLeyEducacion"
+            formControlName="idLeyEducacion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idNormaAprobacionDen" for="field_idNormaAprobacionDen"
+            >Id Norma Aprobacion Den</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idNormaAprobacionDen"
+            id="field_idNormaAprobacionDen"
+            data-cy="idNormaAprobacionDen"
+            formControlName="idNormaAprobacionDen"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idNormaDictamenDen" for="field_idNormaDictamenDen"
+            >Id Norma Dictamen Den</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idNormaDictamenDen"
+            id="field_idNormaDictamenDen"
+            data-cy="idNormaDictamenDen"
+            formControlName="idNormaDictamenDen"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idSeCorrespondeCon" for="field_idSeCorrespondeCon"
+            >Id Se Corresponde Con</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idSeCorrespondeCon"
+            id="field_idSeCorrespondeCon"
+            data-cy="idSeCorrespondeCon"
+            formControlName="idSeCorrespondeCon"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.titulo" for="field_titulo">Titulo</label>
+          <input type="text" class="form-control" name="titulo" id="field_titulo" data-cy="titulo" formControlName="titulo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.tituloImpresion" for="field_tituloImpresion"
+            >Titulo Impresion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="tituloImpresion"
+            id="field_tituloImpresion"
+            data-cy="tituloImpresion"
+            formControlName="tituloImpresion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedio" for="field_tituloIntermedio"
+            >Titulo Intermedio</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="tituloIntermedio"
+            id="field_tituloIntermedio"
+            data-cy="tituloIntermedio"
+            formControlName="tituloIntermedio"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedioImpresion"
+            for="field_tituloIntermedioImpresion"
+            >Titulo Intermedio Impresion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="tituloIntermedioImpresion"
+            id="field_tituloIntermedioImpresion"
+            data-cy="tituloIntermedioImpresion"
+            formControlName="tituloIntermedioImpresion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.orientacion" for="field_orientacion">Orientacion</label>
+          <input
+            type="text"
+            class="form-control"
+            name="orientacion"
+            id="field_orientacion"
+            data-cy="orientacion"
+            formControlName="orientacion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idRama" for="field_idRama">Id Rama</label>
+          <input type="number" class="form-control" name="idRama" id="field_idRama" data-cy="idRama" formControlName="idRama" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="sistTituApp.ofertaEducativa.idSeccionTituloIntermedio"
+            for="field_idSeccionTituloIntermedio"
+            >Id Seccion Titulo Intermedio</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idSeccionTituloIntermedio"
+            id="field_idSeccionTituloIntermedio"
+            data-cy="idSeccionTituloIntermedio"
+            formControlName="idSeccionTituloIntermedio"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idCursoGrupoNombre" for="field_idCursoGrupoNombre"
+            >Id Curso Grupo Nombre</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idCursoGrupoNombre"
+            id="field_idCursoGrupoNombre"
+            data-cy="idCursoGrupoNombre"
+            formControlName="idCursoGrupoNombre"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.correlatividad" for="field_correlatividad"
+            >Correlatividad</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="correlatividad"
+            id="field_correlatividad"
+            data-cy="correlatividad"
+            formControlName="correlatividad"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.idModalidadDictado" for="field_idModalidadDictado"
+            >Id Modalidad Dictado</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="idModalidadDictado"
+            id="field_idModalidadDictado"
+            data-cy="idModalidadDictado"
+            formControlName="idModalidadDictado"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.titula" for="field_titula">Titula</label>
+          <input type="number" class="form-control" name="titula" id="field_titula" data-cy="titula" formControlName="titula" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="sistTituApp.ofertaEducativa.cicloBasico" for="field_cicloBasico">Ciclo Basico</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cicloBasico"
+            id="field_cicloBasico"
+            data-cy="cicloBasico"
+            formControlName="cicloBasico"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

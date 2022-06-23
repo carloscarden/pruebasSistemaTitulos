@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="alumnoEstabOferta">
+      <h2 data-cy="alumnoEstabOfertaDetailsHeading">
+        <span>Alumno Estab Oferta</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.id }}</span>
+        </dd>
+        <dt><span>Id Ser</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.idSer }}</span>
+        </dd>
+        <dt><span>Id Oferta Educativa</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.idOfertaEducativa }}</span>
+        </dd>
+        <dt><span>Id Alumno</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.idAlumno }}</span>
+        </dd>
+        <dt><span>Id Estado Alumno Estab Oferta</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.idEstadoAlumnoEstabOferta }}</span>
+        </dd>
+        <dt><span>Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.fechaInicio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Fecha Fin</span></dt>
+        <dd>
+          <span>{{ alumnoEstabOferta.fechaFin | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Alumno</span></dt>
+        <dd>
+          <div *ngIf="alumnoEstabOferta.alumno">
+            <a [routerLink]="['/alumno', alumnoEstabOferta.alumno?.id, 'view']">{{ alumnoEstabOferta.alumno?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Oferta Educativa</span></dt>
+        <dd>
+          <div *ngIf="alumnoEstabOferta.ofertaEducativa">
+            <a [routerLink]="['/oferta-educativa', alumnoEstabOferta.ofertaEducativa?.id, 'view']">{{
+              alumnoEstabOferta.ofertaEducativa?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/alumno-estab-oferta', alumnoEstabOferta.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

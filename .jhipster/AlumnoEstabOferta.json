@@ -1,0 +1,69 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143836",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "alumno_estab_oferta",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idSer",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idOfertaEducativa",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idAlumno",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idEstadoAlumnoEstabOferta",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaFin",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AlumnoEstabOferta",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoAnalitico",
+      "otherEntityRelationshipName": "alumnoEstabOferta",
+      "relationshipName": "alumnoAnalitico",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "alumnoTitulo",
+      "otherEntityRelationshipName": "alumnoEstabOferta",
+      "relationshipName": "alumnoTitulo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "alumno",
+      "otherEntityRelationshipName": "alumnoEstabOferta",
+      "relationshipName": "alumno",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "ofertaEducativa",
+      "otherEntityRelationshipName": "alumnoEstabOferta",
+      "relationshipName": "ofertaEducativa",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-alumno-estab-oferta-heading" data-cy="AlumnoEstabOfertaCreateUpdateHeading">Create or edit a Alumno Estab Oferta</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idSer">Id Ser</label>
+          <input type="number" class="form-control" name="idSer" id="field_idSer" data-cy="idSer" formControlName="idSer" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idOfertaEducativa">Id Oferta Educativa</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idOfertaEducativa"
+            id="field_idOfertaEducativa"
+            data-cy="idOfertaEducativa"
+            formControlName="idOfertaEducativa"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idAlumno">Id Alumno</label>
+          <input type="number" class="form-control" name="idAlumno" id="field_idAlumno" data-cy="idAlumno" formControlName="idAlumno" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_idEstadoAlumnoEstabOferta">Id Estado Alumno Estab Oferta</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idEstadoAlumnoEstabOferta"
+            id="field_idEstadoAlumnoEstabOferta"
+            data-cy="idEstadoAlumnoEstabOferta"
+            formControlName="idEstadoAlumnoEstabOferta"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaInicio">Fecha Inicio</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaInicio"
+              data-cy="fechaInicio"
+              type="datetime-local"
+              class="form-control"
+              name="fechaInicio"
+              formControlName="fechaInicio"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fechaFin">Fecha Fin</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaFin"
+              data-cy="fechaFin"
+              type="datetime-local"
+              class="form-control"
+              name="fechaFin"
+              formControlName="fechaFin"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_alumno">Alumno</label>
+          <select class="form-control" id="field_alumno" data-cy="alumno" name="alumno" formControlName="alumno">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="alumnoOption.id === editForm.get('alumno')!.value?.id ? editForm.get('alumno')!.value : alumnoOption"
+              *ngFor="let alumnoOption of alumnosSharedCollection; trackBy: trackAlumnoById"
+            >
+              {{ alumnoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_ofertaEducativa">Oferta Educativa</label>
+          <select
+            class="form-control"
+            id="field_ofertaEducativa"
+            data-cy="ofertaEducativa"
+            name="ofertaEducativa"
+            formControlName="ofertaEducativa"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                ofertaEducativaOption.id === editForm.get('ofertaEducativa')!.value?.id
+                  ? editForm.get('ofertaEducativa')!.value
+                  : ofertaEducativaOption
+              "
+              *ngFor="let ofertaEducativaOption of ofertaEducativasSharedCollection; trackBy: trackOfertaEducativaById"
+            >
+              {{ ofertaEducativaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

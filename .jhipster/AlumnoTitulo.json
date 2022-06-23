@@ -1,0 +1,127 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143838",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "alumno_titulo",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idAlumnoEstabOferta",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fechaEmision",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nroSerie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroRfifd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validezNacional",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaEnvio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaEgreso",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nroLibroMatriz",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nroActa",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nroFolio",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "estabNombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estabCue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estabUbicadoEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estabCiudad",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estabProvincia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idEstadoAlumnoTitulo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tituloIntermedio",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "promedio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaRuta",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "idRamaRuta",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "apYnomListoParaEnviar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentoListoParaEnviar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apYnomEnviado",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentoEnviado",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaUltimoEstado",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AlumnoTitulo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoEstabOferta",
+      "otherEntityRelationshipName": "alumnoTitulo",
+      "relationshipName": "alumnoEstabOferta",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

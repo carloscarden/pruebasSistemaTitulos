@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "alumno": "Alumno",
+        "alumnoEstabOferta": "Alumno Estab Oferta",
+        "alumnoAnalitico": "Alumno Analitico",
+        "alumnoTitulo": "Alumno Titulo",
+        "ofertaEducativa": "Oferta Educativa",
+        "materia": "Materia",
+        "nroSerieTitulo": "Nro Serie Titulo",
+        "rendicion": "Rendicion",
+        "turno": "Turno",
+        "jornada": "Jornada",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

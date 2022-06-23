@@ -1,0 +1,104 @@
+<div>
+  <h2 id="page-heading" data-cy="AlumnoAnaliticoHeading">
+    <span>Alumno Analiticos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-alumno-analitico"
+        [routerLink]="['/alumno-analitico/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Alumno Analitico </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="alumnoAnaliticos?.length === 0">
+    <span>No alumnoAnaliticos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="alumnoAnaliticos && alumnoAnaliticos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span>Id</span></th>
+          <th scope="col"><span>Nota</span></th>
+          <th scope="col"><span>Id Estado Alumno Analitico</span></th>
+          <th scope="col"><span>Id Alumno Estab Oferta</span></th>
+          <th scope="col"><span>Id Materia</span></th>
+          <th scope="col"><span>Id Mes Imp</span></th>
+          <th scope="col"><span>Id Ano Imp</span></th>
+          <th scope="col"><span>Establecimiento Imp</span></th>
+          <th scope="col"><span>Alumno Estab Oferta</span></th>
+          <th scope="col"><span>Materia</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumnoAnalitico of alumnoAnaliticos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/alumno-analitico', alumnoAnalitico.id, 'view']">{{ alumnoAnalitico.id }}</a>
+          </td>
+          <td>{{ alumnoAnalitico.nota }}</td>
+          <td>{{ alumnoAnalitico.idEstadoAlumnoAnalitico }}</td>
+          <td>{{ alumnoAnalitico.idAlumnoEstabOferta }}</td>
+          <td>{{ alumnoAnalitico.idMateria }}</td>
+          <td>{{ alumnoAnalitico.idMesImp }}</td>
+          <td>{{ alumnoAnalitico.idAnoImp }}</td>
+          <td>{{ alumnoAnalitico.establecimientoImp }}</td>
+          <td>
+            <div *ngIf="alumnoAnalitico.alumnoEstabOferta">
+              <a [routerLink]="['/alumno-estab-oferta', alumnoAnalitico.alumnoEstabOferta?.id, 'view']">{{
+                alumnoAnalitico.alumnoEstabOferta?.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="alumnoAnalitico.materia">
+              <a [routerLink]="['/materia', alumnoAnalitico.materia?.id, 'view']">{{ alumnoAnalitico.materia?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/alumno-analitico', alumnoAnalitico.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/alumno-analitico', alumnoAnalitico.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(alumnoAnalitico)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

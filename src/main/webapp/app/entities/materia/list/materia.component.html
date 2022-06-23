@@ -1,0 +1,100 @@
+<div>
+  <h2 id="page-heading" data-cy="MateriaHeading">
+    <span>Materias</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-materia"
+        [routerLink]="['/materia/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Materia </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="materias?.length === 0">
+    <span>No materias found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="materias && materias.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span>Id</span></th>
+          <th scope="col"><span>Id Materia Denominacion</span></th>
+          <th scope="col"><span>Marca Modulo</span></th>
+          <th scope="col"><span>Carga Horaria</span></th>
+          <th scope="col"><span>Id Oferta Educativa</span></th>
+          <th scope="col"><span>Id Seccion</span></th>
+          <th scope="col"><span>Id Tipo Materia Opcional</span></th>
+          <th scope="col"><span>Orden</span></th>
+          <th scope="col"><span>Id Area</span></th>
+          <th scope="col"><span>Id Asignatira</span></th>
+          <th scope="col"><span>Codigos Chequeados</span></th>
+          <th scope="col"><span>Obligatoriedad</span></th>
+          <th scope="col"><span>Unidad Carga Pedagogica</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let materia of materias; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/materia', materia.id, 'view']">{{ materia.id }}</a>
+          </td>
+          <td>{{ materia.idMateriaDenominacion }}</td>
+          <td>{{ materia.marcaModulo }}</td>
+          <td>{{ materia.cargaHoraria }}</td>
+          <td>{{ materia.idOfertaEducativa }}</td>
+          <td>{{ materia.idSeccion }}</td>
+          <td>{{ materia.idTipoMateriaOpcional }}</td>
+          <td>{{ materia.orden }}</td>
+          <td>{{ materia.idArea }}</td>
+          <td>{{ materia.idAsignatira }}</td>
+          <td>{{ materia.codigosChequeados }}</td>
+          <td>{{ materia.obligatoriedad }}</td>
+          <td>{{ materia.unidadCargaPedagogica }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/materia', materia.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/materia', materia.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(materia)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

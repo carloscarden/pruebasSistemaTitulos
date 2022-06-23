@@ -1,0 +1,17 @@
+{
+  "sistTituApp": {
+    "jornada": {
+      "home": {
+        "title": "Jornadas",
+        "refreshListLabel": "Refrescar lista",
+        "notFound": "Ningún Jornadas encontrado"
+      },
+      "detail": {
+        "title": "Jornada"
+      },
+      "id": "ID",
+      "codigo": "Codigo",
+      "descripcion": "Descripcion"
+    }
+  }
+}

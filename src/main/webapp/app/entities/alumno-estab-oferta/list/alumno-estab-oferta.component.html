@@ -1,0 +1,104 @@
+<div>
+  <h2 id="page-heading" data-cy="AlumnoEstabOfertaHeading">
+    <span j>Alumno Estab Ofertas</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-alumno-estab-oferta"
+        [routerLink]="['/alumno-estab-oferta/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Alumno Estab Oferta </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="alumnoEstabOfertas?.length === 0">
+    <span>No alumnoEstabOfertas found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="alumnoEstabOfertas && alumnoEstabOfertas.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span>Id</span></th>
+          <th scope="col"><span>Id Ser</span></th>
+          <th scope="col"><span>Id Oferta Educativa</span></th>
+          <th scope="col"><span>Id Alumno</span></th>
+          <th scope="col">
+            <span>Id Estado Alumno Estab Oferta</span>
+          </th>
+          <th scope="col"><span>Fecha Inicio</span></th>
+          <th scope="col"><span>Fecha Fin</span></th>
+          <th scope="col"><span>Alumno</span></th>
+          <th scope="col"><span>Oferta Educativa</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumnoEstabOferta of alumnoEstabOfertas; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/alumno-estab-oferta', alumnoEstabOferta.id, 'view']">{{ alumnoEstabOferta.id }}</a>
+          </td>
+          <td>{{ alumnoEstabOferta.idSer }}</td>
+          <td>{{ alumnoEstabOferta.idOfertaEducativa }}</td>
+          <td>{{ alumnoEstabOferta.idAlumno }}</td>
+          <td>{{ alumnoEstabOferta.idEstadoAlumnoEstabOferta }}</td>
+          <td>{{ alumnoEstabOferta.fechaInicio | formatMediumDatetime }}</td>
+          <td>{{ alumnoEstabOferta.fechaFin | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="alumnoEstabOferta.alumno">
+              <a [routerLink]="['/alumno', alumnoEstabOferta.alumno?.id, 'view']">{{ alumnoEstabOferta.alumno?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="alumnoEstabOferta.ofertaEducativa">
+              <a [routerLink]="['/oferta-educativa', alumnoEstabOferta.ofertaEducativa?.id, 'view']">{{
+                alumnoEstabOferta.ofertaEducativa?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/alumno-estab-oferta', alumnoEstabOferta.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/alumno-estab-oferta', alumnoEstabOferta.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(alumnoEstabOferta)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

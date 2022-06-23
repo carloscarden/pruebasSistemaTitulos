@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nroSerieTitulo">
+      <h2 data-cy="nroSerieTituloDetailsHeading"><span jhiTranslate="sistTituApp.nroSerieTitulo.detail.title">Nro Serie Titulo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.id }}</span>
+        </dd>
+        <dt><span>Nro Serie Inicio</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.nroSerieInicio }}</span>
+        </dd>
+        <dt><span>Nro Serie Fin</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.nroSerieFin }}</span>
+        </dd>
+        <dt><span>Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.fechaInicio | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Fecha Fin</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.fechaFin | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Usuario Alta</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.usuarioAlta }}</span>
+        </dd>
+        <dt><span>Usuario Modificacion</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.usuarioModificacion }}</span>
+        </dd>
+        <dt><span>Serie</span></dt>
+        <dd>
+          <span>{{ nroSerieTitulo.serie }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/nro-serie-titulo', nroSerieTitulo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "changelogDate": "20220606170733",
+  "fields": [
+    {
+      "fieldName": "turno",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "vigh",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "orden",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Turno",
+  "pagination": "no",
+  "readOnly": true,
+  "relationships": [],
+  "service": "no"
+}

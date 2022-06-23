@@ -1,0 +1,161 @@
+<div>
+  <h2 id="page-heading" data-cy="AlumnoTituloHeading">
+    <span>Alumno Titulos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-alumno-titulo"
+        [routerLink]="['/alumno-titulo/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Alumno Titulo </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="alumnoTitulos?.length === 0">
+    <span>No alumnoTitulos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="alumnoTitulos && alumnoTitulos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="sistTituApp.alumnoTitulo.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="idAlumnoEstabOferta"><span>Id Alumno Estab Oferta</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fechaEmision"><span>Fecha Emision</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nroSerie"><span>Nro Serie</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="numeroRfifd"><span>Numero Rfifd</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="validezNacional"><span>Validez Nacional</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fechaEnvio"><span>Fecha Envio</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fechaEgreso"><span>Fecha Egreso</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nroLibroMatriz"><span>Nro Libro Matriz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nroActa"><span>Nro Acta</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nroFolio"><span>Nro Folio</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="estabNombre"><span>Estab Nombre</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="estabCue"><span>Estab Cue</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="estabUbicadoEn"><span>Estab Ubicado En</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="estabCiudad"><span>Estab Ciudad</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="estabProvincia"><span>Estab Provincia</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="idEstadoAlumnoTitulo">
+            <span>Id Estado Alumno Titulo</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tituloIntermedio"><span>Titulo Intermedio</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="promedio"><span>Promedio</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fechaRuta"><span>Fecha Ruta</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="idRamaRuta"><span>Id Rama Ruta</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="apYnomListoParaEnviar">
+            <span>Ap Ynom Listo Para Enviar</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="documentoListoParaEnviar">
+            <span>Documento Listo Para Enviar</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="apYnomEnviado"><span>Ap Ynom Enviado</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="documentoEnviado"><span>Documento Enviado</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fechaUltimoEstado"><span>Fecha Ultimo Estado</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="alumnoEstabOferta.id"><span>Alumno Estab Oferta</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumnoTitulo of alumnoTitulos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/alumno-titulo', alumnoTitulo.id, 'view']">{{ alumnoTitulo.id }}</a>
+          </td>
+          <td>{{ alumnoTitulo.idAlumnoEstabOferta }}</td>
+          <td>{{ alumnoTitulo.fechaEmision | formatMediumDatetime }}</td>
+          <td>{{ alumnoTitulo.nroSerie }}</td>
+          <td>{{ alumnoTitulo.numeroRfifd }}</td>
+          <td>{{ alumnoTitulo.validezNacional }}</td>
+          <td>{{ alumnoTitulo.fechaEnvio | formatMediumDatetime }}</td>
+          <td>{{ alumnoTitulo.fechaEgreso | formatMediumDatetime }}</td>
+          <td>{{ alumnoTitulo.nroLibroMatriz }}</td>
+          <td>{{ alumnoTitulo.nroActa }}</td>
+          <td>{{ alumnoTitulo.nroFolio }}</td>
+          <td>{{ alumnoTitulo.estabNombre }}</td>
+          <td>{{ alumnoTitulo.estabCue }}</td>
+          <td>{{ alumnoTitulo.estabUbicadoEn }}</td>
+          <td>{{ alumnoTitulo.estabCiudad }}</td>
+          <td>{{ alumnoTitulo.estabProvincia }}</td>
+          <td>{{ alumnoTitulo.idEstadoAlumnoTitulo }}</td>
+          <td>{{ alumnoTitulo.tituloIntermedio }}</td>
+          <td>{{ alumnoTitulo.promedio }}</td>
+          <td>{{ alumnoTitulo.fechaRuta | formatMediumDatetime }}</td>
+          <td>{{ alumnoTitulo.idRamaRuta }}</td>
+          <td>{{ alumnoTitulo.apYnomListoParaEnviar }}</td>
+          <td>{{ alumnoTitulo.documentoListoParaEnviar }}</td>
+          <td>{{ alumnoTitulo.apYnomEnviado }}</td>
+          <td>{{ alumnoTitulo.documentoEnviado }}</td>
+          <td>{{ alumnoTitulo.fechaUltimoEstado | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="alumnoTitulo.alumnoEstabOferta">
+              <a [routerLink]="['/alumno-estab-oferta', alumnoTitulo.alumnoEstabOferta?.id, 'view']">{{
+                alumnoTitulo.alumnoEstabOferta?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/alumno-titulo', alumnoTitulo.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/alumno-titulo', alumnoTitulo.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(alumnoTitulo)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="alumnoTitulos && alumnoTitulos.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

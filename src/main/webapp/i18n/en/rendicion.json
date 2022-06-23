@@ -1,0 +1,37 @@
+{
+  "sistTituApp": {
+    "rendicion": {
+      "home": {
+        "title": "Rendicions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rendicion",
+        "createOrEditLabel": "Create or edit a Rendicion",
+        "notFound": "No Rendicions found"
+      },
+      "created": "A new Rendicion is created with identifier {{ param }}",
+      "updated": "A Rendicion is updated with identifier {{ param }}",
+      "deleted": "A Rendicion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rendicion {{ id }}?"
+      },
+      "detail": {
+        "title": "Rendicion"
+      },
+      "id": "ID",
+      "dniUsuario": "Dni Usuario",
+      "nombreUsuario": "Nombre Usuario",
+      "dniUsuarioAnulador": "Dni Usuario Anulador",
+      "nombreUsuarioAnulador": "Nombre Usuario Anulador",
+      "motivo": "Motivo",
+      "causaRechazo": "Causa Rechazo",
+      "fechaAnulacion": "Fecha Anulacion",
+      "dniAlumno": "Dni Alumno",
+      "nombreAlumno": "Nombre Alumno",
+      "alumnoTituloId": "Alumno Titulo Id",
+      "establecimientoId": "Establecimiento Id",
+      "claveEstab": "Clave Estab",
+      "rama": "Rama",
+      "nroFormulario": "Nro Formulario"
+    }
+  }
+}

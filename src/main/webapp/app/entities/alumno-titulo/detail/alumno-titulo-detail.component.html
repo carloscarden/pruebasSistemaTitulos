@@ -1,0 +1,136 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="alumnoTitulo">
+      <h2 data-cy="alumnoTituloDetailsHeading"><span>Alumno Titulo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sistTituApp.alumnoTitulo.id">Id</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.id }}</span>
+        </dd>
+        <dt><span>Id Alumno Estab Oferta</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.idAlumnoEstabOferta }}</span>
+        </dd>
+        <dt><span>Fecha Emision</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.fechaEmision | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Nro Serie</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.nroSerie }}</span>
+        </dd>
+        <dt><span>Numero Rfifd</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.numeroRfifd }}</span>
+        </dd>
+        <dt><span>Validez Nacional</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.validezNacional }}</span>
+        </dd>
+        <dt><span>Fecha Envio</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.fechaEnvio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Fecha Egreso</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.fechaEgreso | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Nro Libro Matriz</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.nroLibroMatriz }}</span>
+        </dd>
+        <dt><span>Nro Acta</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.nroActa }}</span>
+        </dd>
+        <dt><span>Nro Folio</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.nroFolio }}</span>
+        </dd>
+        <dt><span>Estab Nombre</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.estabNombre }}</span>
+        </dd>
+        <dt><span>Estab Cue</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.estabCue }}</span>
+        </dd>
+        <dt><span>Estab Ubicado En</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.estabUbicadoEn }}</span>
+        </dd>
+        <dt><span>Estab Ciudad</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.estabCiudad }}</span>
+        </dd>
+        <dt><span>Estab Provincia</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.estabProvincia }}</span>
+        </dd>
+        <dt><span>Id Estado Alumno Titulo</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.idEstadoAlumnoTitulo }}</span>
+        </dd>
+        <dt><span>Titulo Intermedio</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.tituloIntermedio }}</span>
+        </dd>
+        <dt><span>Promedio</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.promedio }}</span>
+        </dd>
+        <dt><span>Fecha Ruta</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.fechaRuta | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Id Rama Ruta</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.idRamaRuta }}</span>
+        </dd>
+        <dt><span>Ap Ynom Listo Para Enviar</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.apYnomListoParaEnviar }}</span>
+        </dd>
+        <dt><span>Documento Listo Para Enviar</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.documentoListoParaEnviar }}</span>
+        </dd>
+        <dt><span>Ap Ynom Enviado</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.apYnomEnviado }}</span>
+        </dd>
+        <dt><span>Documento Enviado</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.documentoEnviado }}</span>
+        </dd>
+        <dt><span>Fecha Ultimo Estado</span></dt>
+        <dd>
+          <span>{{ alumnoTitulo.fechaUltimoEstado | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Alumno Estab Oferta</span></dt>
+        <dd>
+          <div *ngIf="alumnoTitulo.alumnoEstabOferta">
+            <a [routerLink]="['/alumno-estab-oferta', alumnoTitulo.alumnoEstabOferta?.id, 'view']">{{
+              alumnoTitulo.alumnoEstabOferta?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/alumno-titulo', alumnoTitulo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

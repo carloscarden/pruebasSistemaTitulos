@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="alumnoAnalitico">
+      <h2 data-cy="alumnoAnaliticoDetailsHeading"><span>Alumno Analitico</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.id }}</span>
+        </dd>
+        <dt><span>Nota</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.nota }}</span>
+        </dd>
+        <dt><span>Id Estado Alumno Analitico</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.idEstadoAlumnoAnalitico }}</span>
+        </dd>
+        <dt><span>Id Alumno Estab Oferta</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.idAlumnoEstabOferta }}</span>
+        </dd>
+        <dt><span>Id Materia</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.idMateria }}</span>
+        </dd>
+        <dt><span>Id Mes Imp</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.idMesImp }}</span>
+        </dd>
+        <dt><span>Id Ano Imp</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.idAnoImp }}</span>
+        </dd>
+        <dt><span>Establecimiento Imp</span></dt>
+        <dd>
+          <span>{{ alumnoAnalitico.establecimientoImp }}</span>
+        </dd>
+        <dt><span>Alumno Estab Oferta</span></dt>
+        <dd>
+          <div *ngIf="alumnoAnalitico.alumnoEstabOferta">
+            <a [routerLink]="['/alumno-estab-oferta', alumnoAnalitico.alumnoEstabOferta?.id, 'view']">{{
+              alumnoAnalitico.alumnoEstabOferta?.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span>Materia</span></dt>
+        <dd>
+          <div *ngIf="alumnoAnalitico.materia">
+            <a [routerLink]="['/materia', alumnoAnalitico.materia?.id, 'view']">{{ alumnoAnalitico.materia?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/alumno-analitico', alumnoAnalitico.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

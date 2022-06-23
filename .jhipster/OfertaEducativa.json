@@ -1,0 +1,135 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143839",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "oferta_educativa",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idModalidad",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idNivel",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idOrientacion",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idTituloDenominacion",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "observiaciones",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idTipoTitulo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idUser",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaFin",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaEstado",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "idEstadoOferta",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idLeyEducacion",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idNormaAprobacionDen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idNormaDictamenDen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idSeCorrespondeCon",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "titulo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tituloImpresion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tituloIntermedio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tituloIntermedioImpresion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orientacion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idRama",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idSeccionTituloIntermedio",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idCursoGrupoNombre",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "correlatividad",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "idModalidadDictado",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "titula",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cicloBasico",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "OfertaEducativa",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoEstabOferta",
+      "otherEntityRelationshipName": "ofertaEducativa",
+      "relationshipName": "alumnoEstabOferta",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

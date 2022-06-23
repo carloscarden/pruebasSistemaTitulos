@@ -1,0 +1,136 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ofertaEducativa">
+      <h2 data-cy="ofertaEducativaDetailsHeading"><span jhiTranslate="sistTituApp.ofertaEducativa.detail.title">Oferta Educativa</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.id">Id</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idModalidad">Id Modalidad</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idModalidad }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idNivel">Id Nivel</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idNivel }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idOrientacion">Id Orientacion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idOrientacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idTituloDenominacion">Id Titulo Denominacion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idTituloDenominacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.observiaciones">Observiaciones</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.observiaciones }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idTipoTitulo">Id Tipo Titulo</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idTipoTitulo }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idUser">Id User</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.fechaInicio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.fechaFin">Fecha Fin</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.fechaFin | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.fechaEstado">Fecha Estado</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.fechaEstado | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idEstadoOferta">Id Estado Oferta</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idEstadoOferta }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idLeyEducacion">Id Ley Educacion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idLeyEducacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idNormaAprobacionDen">Id Norma Aprobacion Den</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idNormaAprobacionDen }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idNormaDictamenDen">Id Norma Dictamen Den</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idNormaDictamenDen }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idSeCorrespondeCon">Id Se Corresponde Con</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idSeCorrespondeCon }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.titulo">Titulo</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.titulo }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.tituloImpresion">Titulo Impresion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.tituloImpresion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedio">Titulo Intermedio</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.tituloIntermedio }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedioImpresion">Titulo Intermedio Impresion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.tituloIntermedioImpresion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.orientacion">Orientacion</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.orientacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idRama">Id Rama</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idRama }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idSeccionTituloIntermedio">Id Seccion Titulo Intermedio</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idSeccionTituloIntermedio }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idCursoGrupoNombre">Id Curso Grupo Nombre</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idCursoGrupoNombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.correlatividad">Correlatividad</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.correlatividad }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.idModalidadDictado">Id Modalidad Dictado</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.idModalidadDictado }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.titula">Titula</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.titula }}</span>
+        </dd>
+        <dt><span jhiTranslate="sistTituApp.ofertaEducativa.cicloBasico">Ciclo Basico</span></dt>
+        <dd>
+          <span>{{ ofertaEducativa.cicloBasico }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/oferta-educativa', ofertaEducativa.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

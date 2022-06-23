@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606143837",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "alumno_analitico",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nota",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idEstadoAlumnoAnalitico",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idAlumnoEstabOferta",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idMateria",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idMesImp",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idAnoImp",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "establecimientoImp",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AlumnoAnalitico",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "alumnoEstabOferta",
+      "otherEntityRelationshipName": "alumnoAnalitico",
+      "relationshipName": "alumnoEstabOferta",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "materia",
+      "otherEntityRelationshipName": "alumnoAnalitico",
+      "relationshipName": "materia",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

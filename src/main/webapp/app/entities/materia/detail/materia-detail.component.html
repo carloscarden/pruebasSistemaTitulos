@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="materia">
+      <h2 data-cy="materiaDetailsHeading"><span>Materia</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sistTituApp.materia.id">Id</span></dt>
+        <dd>
+          <span>{{ materia.id }}</span>
+        </dd>
+        <dt><span>Id Materia Denominacion</span></dt>
+        <dd>
+          <span>{{ materia.idMateriaDenominacion }}</span>
+        </dd>
+        <dt><span>Marca Modulo</span></dt>
+        <dd>
+          <span>{{ materia.marcaModulo }}</span>
+        </dd>
+        <dt><span>Carga Horaria</span></dt>
+        <dd>
+          <span>{{ materia.cargaHoraria }}</span>
+        </dd>
+        <dt><span>Id Oferta Educativa</span></dt>
+        <dd>
+          <span>{{ materia.idOfertaEducativa }}</span>
+        </dd>
+        <dt><span>Id Seccion</span></dt>
+        <dd>
+          <span>{{ materia.idSeccion }}</span>
+        </dd>
+        <dt><span>Id Tipo Materia Opcional</span></dt>
+        <dd>
+          <span>{{ materia.idTipoMateriaOpcional }}</span>
+        </dd>
+        <dt><span>Orden</span></dt>
+        <dd>
+          <span>{{ materia.orden }}</span>
+        </dd>
+        <dt><span>Id Area</span></dt>
+        <dd>
+          <span>{{ materia.idArea }}</span>
+        </dd>
+        <dt><span>Id Asignatira</span></dt>
+        <dd>
+          <span>{{ materia.idAsignatira }}</span>
+        </dd>
+        <dt><span>Codigos Chequeados</span></dt>
+        <dd>
+          <span>{{ materia.codigosChequeados }}</span>
+        </dd>
+        <dt><span>Obligatoriedad</span></dt>
+        <dd>
+          <span>{{ materia.obligatoriedad }}</span>
+        </dd>
+        <dt><span>Unidad Carga Pedagogica</span></dt>
+        <dd>
+          <span>{{ materia.unidadCargaPedagogica }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/materia', materia.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

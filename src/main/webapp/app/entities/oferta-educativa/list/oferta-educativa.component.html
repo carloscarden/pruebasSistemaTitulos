@@ -1,0 +1,132 @@
+<div>
+  <h2 id="page-heading" data-cy="OfertaEducativaHeading">
+    <span jhiTranslate="sistTituApp.ofertaEducativa.home.title">Oferta Educativas</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="sistTituApp.ofertaEducativa.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-oferta-educativa"
+        [routerLink]="['/oferta-educativa/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="sistTituApp.ofertaEducativa.home.createLabel"> Create a new Oferta Educativa </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="ofertaEducativas?.length === 0">
+    <span jhiTranslate="sistTituApp.ofertaEducativa.home.notFound">No ofertaEducativas found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="ofertaEducativas && ofertaEducativas.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.id">Id</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idModalidad">Id Modalidad</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idNivel">Id Nivel</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idOrientacion">Id Orientacion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idTituloDenominacion">Id Titulo Denominacion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.observiaciones">Observiaciones</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idTipoTitulo">Id Tipo Titulo</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idUser">Id User</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.fechaInicio">Fecha Inicio</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.fechaFin">Fecha Fin</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.fechaEstado">Fecha Estado</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idEstadoOferta">Id Estado Oferta</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idLeyEducacion">Id Ley Educacion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idNormaAprobacionDen">Id Norma Aprobacion Den</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idNormaDictamenDen">Id Norma Dictamen Den</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idSeCorrespondeCon">Id Se Corresponde Con</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.titulo">Titulo</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.tituloImpresion">Titulo Impresion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedio">Titulo Intermedio</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.tituloIntermedioImpresion">Titulo Intermedio Impresion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.orientacion">Orientacion</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idRama">Id Rama</span></th>
+          <th scope="col">
+            <span jhiTranslate="sistTituApp.ofertaEducativa.idSeccionTituloIntermedio">Id Seccion Titulo Intermedio</span>
+          </th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idCursoGrupoNombre">Id Curso Grupo Nombre</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.correlatividad">Correlatividad</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.idModalidadDictado">Id Modalidad Dictado</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.titula">Titula</span></th>
+          <th scope="col"><span jhiTranslate="sistTituApp.ofertaEducativa.cicloBasico">Ciclo Basico</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ofertaEducativa of ofertaEducativas; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/oferta-educativa', ofertaEducativa.id, 'view']">{{ ofertaEducativa.id }}</a>
+          </td>
+          <td>{{ ofertaEducativa.idModalidad }}</td>
+          <td>{{ ofertaEducativa.idNivel }}</td>
+          <td>{{ ofertaEducativa.idOrientacion }}</td>
+          <td>{{ ofertaEducativa.idTituloDenominacion }}</td>
+          <td>{{ ofertaEducativa.observiaciones }}</td>
+          <td>{{ ofertaEducativa.idTipoTitulo }}</td>
+          <td>{{ ofertaEducativa.idUser }}</td>
+          <td>{{ ofertaEducativa.fechaInicio | formatMediumDatetime }}</td>
+          <td>{{ ofertaEducativa.fechaFin | formatMediumDatetime }}</td>
+          <td>{{ ofertaEducativa.fechaEstado | formatMediumDatetime }}</td>
+          <td>{{ ofertaEducativa.idEstadoOferta }}</td>
+          <td>{{ ofertaEducativa.idLeyEducacion }}</td>
+          <td>{{ ofertaEducativa.idNormaAprobacionDen }}</td>
+          <td>{{ ofertaEducativa.idNormaDictamenDen }}</td>
+          <td>{{ ofertaEducativa.idSeCorrespondeCon }}</td>
+          <td>{{ ofertaEducativa.titulo }}</td>
+          <td>{{ ofertaEducativa.tituloImpresion }}</td>
+          <td>{{ ofertaEducativa.tituloIntermedio }}</td>
+          <td>{{ ofertaEducativa.tituloIntermedioImpresion }}</td>
+          <td>{{ ofertaEducativa.orientacion }}</td>
+          <td>{{ ofertaEducativa.idRama }}</td>
+          <td>{{ ofertaEducativa.idSeccionTituloIntermedio }}</td>
+          <td>{{ ofertaEducativa.idCursoGrupoNombre }}</td>
+          <td>{{ ofertaEducativa.correlatividad }}</td>
+          <td>{{ ofertaEducativa.idModalidadDictado }}</td>
+          <td>{{ ofertaEducativa.titula }}</td>
+          <td>{{ ofertaEducativa.cicloBasico }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/oferta-educativa', ofertaEducativa.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/oferta-educativa', ofertaEducativa.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(ofertaEducativa)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

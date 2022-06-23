@@ -1,0 +1,69 @@
+{
+  "changelogDate": "20220606161249",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "dniUsuario",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombreUsuario",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dniUsuarioAnulador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombreUsuarioAnulador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "motivo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "causaRechazo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaAnulacion",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dniAlumno",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombreAlumno",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alumnoTituloId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "establecimientoId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "claveEstab",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rama",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nroFormulario",
+      "fieldType": "Integer",
+      "fieldValidateRules": []
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Rendicion",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

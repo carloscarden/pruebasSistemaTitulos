@@ -48,6 +48,21 @@ public class CacheConfiguration {
             createCache(cm, com.dgcye.domain.User.class.getName());
             createCache(cm, com.dgcye.domain.Authority.class.getName());
             createCache(cm, com.dgcye.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.dgcye.domain.Alumno.class.getName());
+            createCache(cm, com.dgcye.domain.Alumno.class.getName() + ".alumnoEstabOfertas");
+            createCache(cm, com.dgcye.domain.AlumnoEstabOferta.class.getName());
+            createCache(cm, com.dgcye.domain.AlumnoEstabOferta.class.getName() + ".alumnoAnaliticos");
+            createCache(cm, com.dgcye.domain.AlumnoEstabOferta.class.getName() + ".alumnoTitulos");
+            createCache(cm, com.dgcye.domain.AlumnoAnalitico.class.getName());
+            createCache(cm, com.dgcye.domain.AlumnoTitulo.class.getName());
+            createCache(cm, com.dgcye.domain.OfertaEducativa.class.getName());
+            createCache(cm, com.dgcye.domain.OfertaEducativa.class.getName() + ".alumnoEstabOfertas");
+            createCache(cm, com.dgcye.domain.Materia.class.getName());
+            createCache(cm, com.dgcye.domain.Materia.class.getName() + ".alumnoAnaliticos");
+            createCache(cm, com.dgcye.domain.NroSerieTitulo.class.getName());
+            createCache(cm, com.dgcye.domain.Rendicion.class.getName());
+            createCache(cm, com.dgcye.domain.Turno.class.getName());
+            createCache(cm, com.dgcye.domain.Jornada.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

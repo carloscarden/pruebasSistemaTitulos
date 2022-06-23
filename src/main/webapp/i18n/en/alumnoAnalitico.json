@@ -1,0 +1,32 @@
+{
+  "sistTituApp": {
+    "alumnoAnalitico": {
+      "home": {
+        "title": "Alumno Analiticos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Alumno Analitico",
+        "createOrEditLabel": "Create or edit a Alumno Analitico",
+        "notFound": "No Alumno Analiticos found"
+      },
+      "created": "A new Alumno Analitico is created with identifier {{ param }}",
+      "updated": "A Alumno Analitico is updated with identifier {{ param }}",
+      "deleted": "A Alumno Analitico is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alumno Analitico {{ id }}?"
+      },
+      "detail": {
+        "title": "Alumno Analitico"
+      },
+      "id": "Id",
+      "nota": "Nota",
+      "idEstadoAlumnoAnalitico": "Id Estado Alumno Analitico",
+      "idAlumnoEstabOferta": "Id Alumno Estab Oferta",
+      "idMateria": "Id Materia",
+      "idMesImp": "Id Mes Imp",
+      "idAnoImp": "Id Ano Imp",
+      "establecimientoImp": "Establecimiento Imp",
+      "alumnoEstabOferta": "Alumno Estab Oferta",
+      "materia": "Materia"
+    }
+  }
+}
